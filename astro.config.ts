@@ -10,7 +10,11 @@ import vesper from "./src/lib/vesper.json";
 
 export default defineConfig({
   site: "https://www.thedropoutfund.com",
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   output: "hybrid",
   integrations: [
     mdx(),
@@ -21,10 +25,10 @@ export default defineConfig({
   ],
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: "viewport"
+    defaultStrategy: "viewport",
   },
   server: {
-    port: 6969
+    port: 6969,
   },
   // @ts-expect-error
   markdown: { shikiConfig: { theme: vesper, wrap: true } },
