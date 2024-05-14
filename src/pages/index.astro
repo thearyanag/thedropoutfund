@@ -6,12 +6,15 @@ import Base from "../layouts/Base.astro";
 import Project from "../components/Project.astro";
 import PostRow from "../components/PostRow.astro";
 import { getProjects } from "../lib/projects";
+import { getInitiatives } from "../lib/initiatives";
 
 // const projects = await getProjects(6)
 const projects = await getProjects();
 const posts = sortPostsByDate(
   await getCollection("blog", ({ data }) => data.isDraft !== true)
 ).slice(0, 4);
+
+const active_initiatives = await getInitiatives();
 
 const title = "thedropoutfund • home";
 ---
@@ -32,6 +35,13 @@ const title = "thedropoutfund • home";
       a <strong>college dropout</strong>. i love building software and hardware products. i am <strong>cto</strong
       > at a company. i want to support dropout's like me, so this is just a step in that direction.
     </p>
+
+    <div class="mt-12"></div>
+    <h2>initiatives</h2>
+
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+      {active_initiatives.map((project) => <Project {project} />)}
+    </div>
 
     <div class="mt-12"></div>
     <h2>alumni</h2>
