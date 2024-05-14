@@ -10,8 +10,8 @@ export async function GET(context) {
   const posts = sortPostsByDate(await getCollection("blog", ({ data }) => data.isDraft !== true))
 
   return rss({
-    title: "nexxel's blog",
-    description: "Writings on programming and technology.",
+    title: "thedropoutfund",
+    description: "supporting the crazy ones",
     site: context.site,
     items: posts.map(post => ({
       title: post.data.title,

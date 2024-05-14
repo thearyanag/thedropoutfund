@@ -1,4 +1,4 @@
-personal website and blog of nexxel. inspired by [zaduma](https://github.com/hasparus/zaduma).
+website for the dropout fund, inspired by [nexxel](https://github.com/nexxel).
 
 **tech stack**
 
