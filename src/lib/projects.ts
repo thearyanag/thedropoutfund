@@ -25,7 +25,7 @@ export async function getProjects(): Promise<Project[]> {
     {
       repo: "sampreet",
       link: "https://www.linkedin.com/in/sampreet-kulkarni-35b4b620b/",
-      description: "worked on a social media for college students",
+      description: "worked on a social media for students focused on connecting builders and creators",
     },
   ];
 }
